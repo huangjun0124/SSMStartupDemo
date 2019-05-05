@@ -22,7 +22,11 @@
         <jdbcConnection driverClass="${jdbc.driver}"
                         connectionURL="${jdbc.url}"
                         userId="${jdbc.username}"
-                        password="${jdbc.password}" />
+                        password="${jdbc.password}" >
+            <!--MySQL 不支持 schema 或者 catalog 所以需要添加这个-->
+            <!--参考 : http://www.mybatis.org/generator/usage/mysql.html-->
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
 
         <!-- 类型转换 -->
         <javaTypeResolver>
@@ -49,7 +53,7 @@
         </javaClientGenerator>
 
         <!--要生成的数据库表-->
-        <table schema="test" tableName="user" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        <table tableName="user" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
             <!--字段名称使用骆驼命名方式：dept_no 变为deptNo-->
             <property name="useActualColumnNames" value="false" />
         </table>

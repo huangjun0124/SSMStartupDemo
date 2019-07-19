@@ -11,9 +11,9 @@
     <title>title</title>
 </head>
 <body>
-<h2>部门信息:</h2>
+<h2>角色信息:</h2>
 <c:if test="${role==null}">
-    该部门不存在
+    该角色不存在
 </c:if>
 ${role.id}
 ${role.roleName}

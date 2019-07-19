@@ -16,6 +16,7 @@ public class RoleController {
     @Autowired
     private IRoleService roleService;
 
+    // 调用url 示例：http://localhost/role/getRoleById/216e8f7c28a846a78de10d7b8e1acf34
     @RequestMapping(value = "/getRoleById/{id}", method = RequestMethod.GET)
     public String findById(@PathVariable("id") String id, Model model){
         Role role = roleService.findRoleById(id);

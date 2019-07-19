@@ -4,7 +4,10 @@ import com.wishuok.mapper.RoleMapper;
 import com.wishuok.pojo.Role;
 import com.wishuok.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.core.RedisOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.SessionCallback;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -27,12 +30,25 @@ public class RoleService implements IRoleService {
         testJedisPool();
         Role role = roleMapper.selectByPrimaryKey(id);
         role = testJedisTemplate(role);
+        role = redisTemplateSameSession(role);
         return role;
     }
     private Role testJedisTemplate(Role role){
          redisTemplate.opsForValue().set(role.getId(), role);
          return (Role)redisTemplate.opsForValue().get(role.getId());
     }
+
+    private Role redisTemplateSameSession(Role role){
+        SessionCallback callback = new SessionCallback() {   // 匿名类
+            @Override
+            public Object execute(RedisOperations redisOperations) throws DataAccessException {
+                redisOperations.boundValueOps(role.getId()).set(role);
+                return (Role)redisOperations.boundValueOps(role.getId()).get();
+            }
+        };
+        return (Role)redisTemplate.execute(callback);
+    }
+
     private void testJedis(){
         Jedis jedis = new Jedis("192.168.109.128", 6379);
 

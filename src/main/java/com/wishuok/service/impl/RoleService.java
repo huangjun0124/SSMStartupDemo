@@ -4,6 +4,7 @@ import com.wishuok.mapper.RoleMapper;
 import com.wishuok.pojo.Role;
 import com.wishuok.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -18,12 +19,20 @@ public class RoleService implements IRoleService {
     @Autowired
     private RoleMapper roleMapper;
 
+    @Autowired
+    private RedisTemplate redisTemplate;
+
     @Override
     public Role findRoleById(String id) {
         testJedisPool();
-        return roleMapper.selectByPrimaryKey(id);
+        Role role = roleMapper.selectByPrimaryKey(id);
+        role = testJedisTemplate(role);
+        return role;
     }
-
+    private Role testJedisTemplate(Role role){
+         redisTemplate.opsForValue().set(role.getId(), role);
+         return (Role)redisTemplate.opsForValue().get(role.getId());
+    }
     private void testJedis(){
         Jedis jedis = new Jedis("192.168.109.128", 6379);
 

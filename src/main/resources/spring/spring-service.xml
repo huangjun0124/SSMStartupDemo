@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 配置JedisPoolConfig相关参数 -->
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="100"/>
+        <property name="maxIdle" value="20"/>
+        <property name="minIdle" value="3"/>
+        <property name="maxWaitMillis" value="2000"/>
+    </bean>
+
+    <!-- 配置redis服务器信息 -->
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" p:host-name="192.168.109.128" p:port="6379"
+          p:poolConfig-ref="poolConfig" p:password="redis"/>
+
+    <bean id="genericJackson2JsonRedisSerializer" class="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer" />
+    <bean id= "stringRedisSerializer" class= "org.springframework.data.redis.serializer.StringRedisSerializer"/>
+    <bean id= "redisTemplate" class= "org.springframework.data.redis.core.RedisTemplate" >
+        <property name="connectionFactory" ref="jedisConnectionFactory" />
+        <property name="keySerializer" ref="stringRedisSerializer"/>
+        <property name="valueSerializer" ref="genericJackson2JsonRedisSerializer" />
+    </bean>
+</beans>

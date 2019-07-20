@@ -13,4 +13,6 @@ public interface IRedisService {
     String testSet();
 
     String testSortedSet();
+
+    String testPipeline();
 }

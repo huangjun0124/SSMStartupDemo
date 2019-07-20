@@ -50,4 +50,11 @@ public class RedisController {
         String str = redisService.testSortedSet();
         return str;     // 必须用 RestController， 否则会显示404页面
     }
+
+    //    http://localhost/redis/testPipeline
+    @RequestMapping(value = "/testPipeline", method = RequestMethod.GET)
+    public String testPipeline() throws UnsupportedEncodingException {
+        String str = redisService.testPipeline();
+        return str;     // 必须用 RestController， 否则会显示404页面
+    }
 }

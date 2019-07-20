@@ -2,12 +2,11 @@ package com.wishuok.service.impl;
 
 import com.wishuok.service.IRedisService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisListCommands;
 import org.springframework.data.redis.connection.RedisZSetCommands;
 import org.springframework.data.redis.connection.SortParameters;
-import org.springframework.data.redis.core.DefaultTypedTuple;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ZSetOperations;
+import org.springframework.data.redis.core.*;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 
@@ -85,7 +84,7 @@ public class RedisService implements IRedisService {
             redisTemplate.opsForList().leftPushAll("list1", nodeList);
             //相当于 rpoplpush 命令，弹出 listl 最右边的节点，插入到 list2 最左边
             redisTemplate.opsForList().rightPopAndLeftPush("list1", "list2");
-            redisTemplate.opsForList().leftPush("list1","left"+i);
+            redisTemplate.opsForList().leftPush("list1", "left" + i);
             //相当于 brpoplpush 命令，注意在 Spring 中使用超时参数区分
             redisTemplate.opsForList().rightPopAndLeftPush("list1", "list2", 1, TimeUnit.SECONDS);
 
@@ -105,29 +104,29 @@ public class RedisService implements IRedisService {
     @Override
     public String testSet() {
         Set set = null;
-        redisTemplate.opsForSet().add("set1","v1","v2","v3","v4","v5","v6");
-        redisTemplate.opsForSet().add("set2","v0","v2","v4","v6","v8");
+        redisTemplate.opsForSet().add("set1", "v1", "v2", "v3", "v4", "v5", "v6");
+        redisTemplate.opsForSet().add("set2", "v0", "v2", "v4", "v6", "v8");
         long size = redisTemplate.opsForSet().size("set1");
         // 差集
-        set = redisTemplate.opsForSet().difference("set1","set2");
+        set = redisTemplate.opsForSet().difference("set1", "set2");
         // 交集
         set = redisTemplate.opsForSet().intersect("set1", "set2");
         // 是否集合元素
-        boolean isExist = redisTemplate.opsForSet().isMember("set1","v2");
+        boolean isExist = redisTemplate.opsForSet().isMember("set1", "v2");
 
         // 随机弹出一个元素
         Object val = redisTemplate.opsForSet().pop("set2");
         // 获取集合元素
         set = redisTemplate.opsForSet().members("set2");
         // 随机获取2个元素
-        val = redisTemplate.opsForSet().randomMembers("set2",2L);
+        val = redisTemplate.opsForSet().randomMembers("set2", 2L);
         // 删除元素
-        redisTemplate.opsForSet().remove("set1","v1");
+        redisTemplate.opsForSet().remove("set1", "v1");
         // 并集
         set = redisTemplate.opsForSet().union("set1", "set2");
         // 求交集并存到另一个集合
-        redisTemplate.opsForSet().intersectAndStore("set1", "set2","inter_set");
-        
+        redisTemplate.opsForSet().intersectAndStore("set1", "set2", "inter_set");
+
         return "test set";
     }
 
@@ -136,7 +135,7 @@ public class RedisService implements IRedisService {
         Set<ZSetOperations.TypedTuple> set1 = new HashSet<ZSetOperations.TypedTuple>();
         Set<ZSetOperations.TypedTuple> set2 = new HashSet<ZSetOperations.TypedTuple>();
         int j = 9;
-        for (int i = 0; i <= 9; i++){
+        for (int i = 0; i <= 9; i++) {
             j--;
             Double score1 = Double.valueOf(i);
             String value1 = "x" + i;
@@ -149,26 +148,47 @@ public class RedisService implements IRedisService {
         }
         redisTemplate.opsForZSet().add("zset1", set1);
         redisTemplate.opsForZSet().add("zset2", set2);
-         Long size = null;
-         // 总数
-         size = redisTemplate.opsForZSet().zCard("zset1");
-         // 求分数在 3<= score <= 6 范围的个数
-        size = redisTemplate.opsForZSet().count("zset1",3,6);
+        Long size = null;
+        // 总数
+        size = redisTemplate.opsForZSet().zCard("zset1");
+        // 求分数在 3<= score <= 6 范围的个数
+        size = redisTemplate.opsForZSet().count("zset1", 3, 6);
         // 从下标开始截取4个元素,不返回分数
-         Set set = redisTemplate.opsForZSet().range("zset1",2,5);
-         // 返回元素和分数   end 传-1则获取全部元素
-         set = redisTemplate.opsForZSet().rangeWithScores("zset1", 2, 4);
-         size = redisTemplate.opsForZSet().intersectAndStore("zset1","zset2","zset-inter");
-         // 区间
+        Set set = redisTemplate.opsForZSet().range("zset1", 2, 5);
+        // 返回元素和分数   end 传-1则获取全部元素
+        set = redisTemplate.opsForZSet().rangeWithScores("zset1", 2, 4);
+        size = redisTemplate.opsForZSet().intersectAndStore("zset1", "zset2", "zset-inter");
+        // 区间
         RedisZSetCommands.Range range = RedisZSetCommands.Range.range();
         RedisZSetCommands.Limit limit = RedisZSetCommands.Limit.limit();
         limit.offset(2);
         limit.count(3);
-        set = redisTemplate.opsForZSet().rangeByLex("zset1",range,limit);
-         // 排名
-        Long rank = redisTemplate.opsForZSet().rank("zset1","x3");
+        set = redisTemplate.opsForZSet().rangeByLex("zset1", range, limit);
+        // 排名
+        Long rank = redisTemplate.opsForZSet().rank("zset1", "x3");
 
         return "test Sorted Set";
+    }
+
+    @Override
+    public String testPipeline() {
+        long start = System.currentTimeMillis();
+        SessionCallback callback = new SessionCallback() {
+            @Override
+            public Object execute(RedisOperations ops) throws DataAccessException {
+                for (int i = 0; i < 100000; i++) {
+                    int j = i + 1;
+                    ops.opsForValue().set("opskey"+i,"opsvalue"+j);
+                    ops.boundValueOps("pipelinetest_key_" + j).set("pipelinetestvalue_" + j);
+                    ops.boundValueOps("pipelinetest_key_" + j).get();
+                }
+                return null;
+            }
+        };
+        List resultList = redisTemplate.executePipelined(callback);
+        long end = System.currentTimeMillis();
+
+        return "test pipeLine : " + (end-start) + " milli seconds";
     }
 }
 

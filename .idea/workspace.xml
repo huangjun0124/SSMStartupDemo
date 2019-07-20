@@ -7,6 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f27263-50a3-4dfe-b697-766eb3c9b47d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wishuok/controller/RedisController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wishuok/service/IRedisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/RedisService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/RoleService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/controller/RoleController.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/RedisService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+            <state relative-caret-position="792">
+              <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,51 +38,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5508">
-              <caret line="204" selection-start-line="204" selection-end-line="204" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mappers/RoleMapper.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-service.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="351">
-              <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/RoleService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="41" column="67" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#testJedis#0;class#RoleService#0" />
-                <element signature="method#testJedisPool#0;class#RoleService#0" />
-              </folding>
+              <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.4.RELEASE/spring-web-5.0.4.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/controller/RedisController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2862">
-              <caret line="124" column="93" selection-start-line="124" selection-start-column="93" selection-end-line="124" selection-end-column="93" />
+            <state relative-caret-position="486">
+              <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,9 +64,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="spring-beans.schema" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -131,9 +105,12 @@
         <option value="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/spring-mybatis.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/RoleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wishuok/service/IRedisService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wishuok/controller/RedisController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/RedisService.java" />
       </list>
     </option>
   </component>
@@ -181,7 +158,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="68" />
-    <option name="width" value="1356" />
+    <option name="width" value="1432" />
     <option name="height" value="1447" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -226,6 +203,34 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="wishuok" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMStartupDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStartupDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wishuok" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMStartupDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStartupDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wishuok" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMStartupDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStartupDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wishuok" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SSMStartupDemo" type="b2602c69:ProjectViewProjectNode" />
@@ -288,7 +293,7 @@
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
@@ -397,18 +402,18 @@
       <workItem from="1563494714009" duration="2876000" />
       <workItem from="1563545135280" duration="3973000" />
       <workItem from="1563549331466" duration="3572000" />
-      <workItem from="1563575939824" duration="965000" />
+      <workItem from="1563575939824" duration="4803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24227000" />
+    <option name="totallyTimeSpent" value="28065000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="68" y="0" width="1356" height="1447" extended-state="0" />
+    <frame x="68" y="0" width="1432" height="1447" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2638889" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20772594" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -452,14 +457,36 @@
     <option name="version" value="1" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/RedisService.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/RedisService.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="role.note" language="JAVA" />
+        <watch expression="redisTemplate.opsForValue().get(&quot;key2&quot;);" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>redisTemplate.opsForValue().get(&quot;key2&quot;);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>role.note</expression-string>
         <language-id>JAVA</language-id>
@@ -469,6 +496,13 @@
     <expressions id="setValue">
       <expression>
         <expression-string>&quot;redismodified&quot;</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>redisTemplate.opsForValue().get(&quot;key2&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -528,13 +562,6 @@
           <second_editor>
             <markdownNavigatorState />
           </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/showRole.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -601,34 +628,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-service.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/showRole.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        <state relative-caret-position="297">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/controller/RoleController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/RoleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        <state relative-caret-position="1098">
+          <caret line="46" column="50" lean-forward="true" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#testJedis#0;class#RoleService#0" />
+            <element signature="method#testJedisPool#0;class#RoleService#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5508">
-          <caret line="204" selection-start-line="204" selection-end-line="204" />
         </state>
       </provider>
     </entry>
@@ -639,21 +654,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.4.RELEASE/spring-web-5.0.4.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2862">
-          <caret line="124" column="93" selection-start-line="124" selection-start-column="93" selection-end-line="124" selection-end-column="93" />
+        <state relative-caret-position="505">
+          <caret line="204" selection-start-line="204" selection-end-line="204" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/RoleService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="41" column="67" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
+        <state relative-caret-position="396">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.9.RELEASE/spring-data-redis-2.1.9.RELEASE.jar!/org/springframework/data/redis/core/ValueOperations.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.9.RELEASE/spring-data-redis-2.1.9.RELEASE-sources.jar!/org/springframework/data/redis/core/ValueOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="301" column="68" selection-start-line="301" selection-start-column="68" selection-end-line="301" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.9.RELEASE/spring-data-redis-2.1.9.RELEASE-sources.jar!/org/springframework/data/redis/core/DefaultValueOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="157" column="77" selection-start-line="157" selection-start-column="77" selection-end-line="157" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/controller/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#testJedis#0;class#RoleService#0" />
-            <element signature="method#testJedisPool#0;class#RoleService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/service/IRedisService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.4.RELEASE/spring-web-5.0.4.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="135" column="110" selection-start-line="135" selection-start-column="110" selection-end-line="135" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/controller/RedisController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-service.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/RedisService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

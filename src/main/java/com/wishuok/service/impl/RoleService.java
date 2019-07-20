@@ -43,7 +43,7 @@ public class RoleService implements IRoleService {
             @Override
             public Object execute(RedisOperations redisOperations) throws DataAccessException {
                 redisOperations.boundValueOps(role.getId()).set(role);
-                return (Role)redisOperations.boundValueOps(role.getId()).get();
+                return redisOperations.boundValueOps(role.getId()).get();
             }
         };
         return (Role)redisTemplate.execute(callback);

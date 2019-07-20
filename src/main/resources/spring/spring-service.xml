@@ -21,5 +21,6 @@
         <property name="connectionFactory" ref="jedisConnectionFactory" />
         <property name="keySerializer" ref="stringRedisSerializer"/>
         <property name="valueSerializer" ref="genericJackson2JsonRedisSerializer" />
+        <property name="defaultSerializer" ref="stringRedisSerializer"/>
     </bean>
 </beans>

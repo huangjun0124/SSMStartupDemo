@@ -23,4 +23,10 @@
         <property name="valueSerializer" ref="genericJackson2JsonRedisSerializer" />
         <property name="defaultSerializer" ref="stringRedisSerializer"/>
     </bean>
+    <bean id= "stringRedisTemplate" class= "org.springframework.data.redis.core.RedisTemplate" >
+        <property name="connectionFactory" ref="jedisConnectionFactory" />
+        <property name="keySerializer" ref="stringRedisSerializer"/>
+        <property name="valueSerializer" ref="stringRedisSerializer" />
+        <property name="defaultSerializer" ref="stringRedisSerializer"/>
+    </bean>
 </beans>

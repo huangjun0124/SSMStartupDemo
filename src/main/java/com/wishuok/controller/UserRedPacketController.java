@@ -28,7 +28,20 @@ public class UserRedPacketController {
         return retMap;
     }
 
-    // 调用url 示例：http://localhost/userRedPacket/doTest
+    @RequestMapping(value = "/grabWithRedis")
+    @ResponseBody
+    public Map<String, Object> grabWithRedis(int redPacketId, int userId)    {
+        int result = userRedPacketService.grabRedPacketByRedis(redPacketId, userId);
+        Map<String, Object> retMap = new HashMap<String, Object>();
+        boolean flag = result > 0;
+        retMap.put("success", flag);
+        String msg = flag ? "抢红包成功 " : "抢红包失败 ";
+        msg += result;
+        retMap.put("message",msg);
+        return retMap;
+    }
+    
+    // 返回jsp页面，调用url 示例：http://localhost/userRedPacket/doTest
     @RequestMapping(value = "/doTest")
     public String doTest(){
         return "redPacketTest";

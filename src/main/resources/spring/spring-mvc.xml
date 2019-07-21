@@ -2,11 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xsi:schemaLocation="
-          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-          http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+          http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
     <!--设置Controller控制器的扫描地址-->
     <context:component-scan base-package="com.wishuok.controller" />
@@ -31,7 +30,8 @@
 
     <!--注解驱动，很多配置都需要它(比如上传下载，类型转换器...)，一般都会添加该配置-->
     <mvc:annotation-driven />
-
+    <!--注解驱动，启用Async，等同于代码使用 @EnableAsync -->
+    <task:annotation-driven />
     <!--
        静态资源映射，应为WEB-INF是一个安全目录，不能使用get访问，而外部的js，css都是属性get访问，所有需要映射，不然无法读取
        location:本地真实路径  mapping：映射搭配的虚拟路径

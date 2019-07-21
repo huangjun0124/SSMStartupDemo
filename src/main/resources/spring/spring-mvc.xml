@@ -15,11 +15,12 @@
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="messageConverters">
             <list>
-                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                     <property name="supportedMediaTypes">
                         <list>
+                            <!--
                             <value>text/plain;charset=UTF-8</value>
-                            <value>text/html;charset=UTF-8</value>
+                            <value>text/html;charset=UTF-8</value> -->
                             <value>application/json;charset=UTF-8</value>
                         </list>
                     </property>
@@ -33,10 +34,9 @@
 
     <!--
        静态资源映射，应为WEB-INF是一个安全目录，不能使用get访问，而外部的js，css都是属性get访问，所有需要映射，不然无法读取
-       location:项目真实路径  mapping：映射路径
+       location:本地真实路径  mapping：映射搭配的虚拟路径
     -->
-    <mvc:resources mapping="/resource/**" location="/WEB-INF/resource" />
-
+    <mvc:resources mapping="/resource/**" location="/resources" />
     <!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/" />

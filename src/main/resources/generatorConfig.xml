@@ -10,8 +10,11 @@
     <!-- 一个数据库一个context -->
     <!-- targetRuntime之后加上simple可以生成简单版 MyBatis3 复杂版-->
     <context id="infoGuardian" targetRuntime="MyBatis3">
+        <!-- 配置覆盖 xml 文件 -->
+        <!--<plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />-->
         <!-- 生成的pojo，将implements Serializable -->
-        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
         <!-- 注释 -->
         <commentGenerator >
             <property name="suppressAllComments" value="true"/><!-- 是否取消注释 -->

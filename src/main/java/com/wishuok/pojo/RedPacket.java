@@ -15,7 +15,7 @@ public class RedPacket implements Serializable {
 
     private Integer total;
 
-    private Long unitAmount;
+    private BigDecimal unitAmount;
 
     private Integer stock;
 
@@ -65,11 +65,11 @@ public class RedPacket implements Serializable {
         this.total = total;
     }
 
-    public Long getUnitAmount() {
+    public BigDecimal getUnitAmount() {
         return unitAmount;
     }
 
-    public void setUnitAmount(Long unitAmount) {
+    public void setUnitAmount(BigDecimal unitAmount) {
         this.unitAmount = unitAmount;
     }
 

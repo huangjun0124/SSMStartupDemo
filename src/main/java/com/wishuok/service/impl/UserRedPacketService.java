@@ -28,7 +28,10 @@ public class UserRedPacketService implements IUserRedPacketService {
     @Override
     @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
     public int grabRedPacket(int redPacketId, int userId) {
-        RedPacket redPacket = redPacketMapper.selectByPrimaryKey(redPacketId);
+        // 无锁，并发量高会导致超发问题
+        // RedPacket redPacket = redPacketMapper.selectByPrimaryKey(redPacketId);
+        // 悲观锁，select会加行锁，有性能问题
+        RedPacket redPacket = redPacketMapper.selectByPrimariKeyForUpdate(redPacketId);
         if(redPacket.getStock() > 0){
             redPacketMapper.decreaseRedPacket(redPacketId);
             UserRedPacket userRedPacket = new UserRedPacket();

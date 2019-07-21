@@ -21,6 +21,12 @@
     from t_red_packet
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByPrimariKeyForUpdate" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_red_packet
+    where id = #{id,jdbcType=INTEGER}  for update
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_red_packet
     where id = #{id,jdbcType=INTEGER}

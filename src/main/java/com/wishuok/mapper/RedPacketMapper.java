@@ -21,4 +21,6 @@ public interface RedPacketMapper {
      * @return 更新吧记录条数
      */
     int decreaseRedPacket(int id);
+
+    RedPacket selectByPrimariKeyForUpdate(Integer id);
 }

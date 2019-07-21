@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wishuok.mapper.RedPacketMapper">
+  <resultMap id="BaseResultMap" type="com.wishuok.pojo.RedPacket">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="amount" jdbcType="DECIMAL" property="amount" />
+    <result column="send_date" jdbcType="TIMESTAMP" property="sendDate" />
+    <result column="total" jdbcType="INTEGER" property="total" />
+    <result column="unit_amount" jdbcType="DECIMAL" property="unitAmount" />
+    <result column="stock" jdbcType="INTEGER" property="stock" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, amount, send_date, total, unit_amount, stock, version, note
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_red_packet
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_red_packet
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wishuok.pojo.RedPacket">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_red_packet (user_id, amount, send_date, 
+      total, unit_amount, stock, 
+      version, note)
+    values (#{userId,jdbcType=INTEGER}, #{amount,jdbcType=DECIMAL}, #{sendDate,jdbcType=TIMESTAMP}, 
+      #{total,jdbcType=INTEGER}, #{unitAmount,jdbcType=DECIMAL}, #{stock,jdbcType=INTEGER}, 
+      #{version,jdbcType=INTEGER}, #{note,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wishuok.pojo.RedPacket">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_red_packet
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="sendDate != null">
+        send_date,
+      </if>
+      <if test="total != null">
+        total,
+      </if>
+      <if test="unitAmount != null">
+        unit_amount,
+      </if>
+      <if test="stock != null">
+        stock,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="note != null">
+        note,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="sendDate != null">
+        #{sendDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="total != null">
+        #{total,jdbcType=INTEGER},
+      </if>
+      <if test="unitAmount != null">
+        #{unitAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="stock != null">
+        #{stock,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wishuok.pojo.RedPacket">
+    update t_red_packet
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="sendDate != null">
+        send_date = #{sendDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="total != null">
+        total = #{total,jdbcType=INTEGER},
+      </if>
+      <if test="unitAmount != null">
+        unit_amount = #{unitAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="stock != null">
+        stock = #{stock,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="note != null">
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wishuok.pojo.RedPacket">
+    update t_red_packet
+    set user_id = #{userId,jdbcType=INTEGER},
+      amount = #{amount,jdbcType=DECIMAL},
+      send_date = #{sendDate,jdbcType=TIMESTAMP},
+      total = #{total,jdbcType=INTEGER},
+      unit_amount = #{unitAmount,jdbcType=DECIMAL},
+      stock = #{stock,jdbcType=INTEGER},
+      version = #{version,jdbcType=INTEGER},
+      note = #{note,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="decreaseRedPacket" parameterType="java.lang.Integer">
+    update t_red_packet
+    set
+      stock = stock - 1
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

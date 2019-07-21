@@ -53,12 +53,13 @@
         </javaClientGenerator>
 
         <!--要生成的数据库表-->
-        <table tableName="user" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <!--字段名称使用骆驼命名方式：dept_no 变为deptNo-->
+        <table tableName="t_red_packet" domainObjectName="RedPacket"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
             <property name="useActualColumnNames" value="false" />
+            <generatedKey column="id" sqlStatement="MySql" identity="true" />
         </table>
-        <table tableName="role" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <property name="useActualColumnNames" value="true" />
+        <table tableName="t_user_red_packet" domainObjectName="UserRedPacket" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="id" sqlStatement="MySql" identity="true" />
         </table>
     </context>
 </generatorConfiguration>

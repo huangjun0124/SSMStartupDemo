@@ -13,12 +13,11 @@
     <script type="text/javascript">
         $(document).ready(function(){
             // 模拟 2500 个异步请求并发
-            var max = 2000;
+            var max = 2500;
             for (var i=1; i <= max; i++){
                 $.post({
                     url:"./grab?redPacketId=1&userId=" + i,
                     success:function(result){
-
                     }
                 });
             }
@@ -26,6 +25,8 @@
     </script>
 </head>
 <body>
-
+     <p id="msg">
+         抢红包进行中...
+     </p>
 </body>
 </html>

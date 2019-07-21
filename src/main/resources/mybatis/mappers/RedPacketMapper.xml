@@ -148,4 +148,12 @@
       stock = stock - 1
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <update id="decreaseRedPackWithVersion">
+    update t_red_packet
+    set
+      stock = stock - 1,
+      version = version + 1
+    where id = #{id,jdbcType=INTEGER}
+    and version = #{version,jdbcType=INTEGER}
+  </update>
 </mapper>

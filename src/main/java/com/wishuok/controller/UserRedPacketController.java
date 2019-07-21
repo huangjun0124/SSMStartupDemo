@@ -20,7 +20,7 @@ public class UserRedPacketController {
     @RequestMapping(value = "/grab")
     @ResponseBody
     public Map<String, Object> grabRedPacket(int redPacketId, int userId)    {
-        int result = userRedPacketService.grabRedPacket(redPacketId, userId);
+        int result = userRedPacketService.grabRedPacketWithVersion(redPacketId, userId);
         Map<String, Object> retMap = new HashMap<String, Object>();
         boolean flag = result > 0;
         retMap.put("success", flag);

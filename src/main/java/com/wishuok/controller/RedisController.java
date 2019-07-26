@@ -1,6 +1,7 @@
 package com.wishuok.controller;
 
 import com.wishuok.service.IRedisService;
+import com.wishuok.utils.LogHelper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +24,21 @@ public class RedisController {
     // http://localhost/redis/testString
     @RequestMapping(value = "/testString", method = RequestMethod.GET)
     @ApiOperation(value = "string test", notes = "测试 string 操作", httpMethod = "GET", response = String.class)
-    public String testString(){
-        String str = redisService.testString();
-        return str;     // 必须用 RestController， 否则会显示404页面
+    public String testString() {
+        LogHelper.LogInfo("start test redis string...");
+        try {
+            String str = redisService.testString();
+            return str;     // 必须用 RestController， 否则会显示404页面
+        } catch (Exception e) {
+             LogHelper.LogError("redis test error:" + e.getMessage());
+        }
+        return "Error Ocurred, please try again later...";
     }
 
     //    http://localhost/redis/testHash
     @RequestMapping(value = "/testHash", method = RequestMethod.GET)
     @ApiOperation(value = "hash test", notes = "测试 hash 操作", httpMethod = "GET", response = String.class)
-    public String testHash(){
+    public String testHash() {
         String str = redisService.testHash();
         return str;     // 必须用 RestController， 否则会显示404页面
     }

@@ -7,13 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f27263-50a3-4dfe-b697-766eb3c9b47d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wishuok/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wishuok/controller/SwaggerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wishuok/utils/LogHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wishuok/controller/RedisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wishuok/controller/RedisController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wishuok/controller/UserRedPacketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wishuok/controller/UserRedPacketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,12 +26,33 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/controller/UserRedPacketController.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="96" />
+            <state relative-caret-position="324">
+              <caret line="230" column="12" selection-start-line="230" selection-start-column="12" selection-end-line="230" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/utils/LogHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#197#198#0" expanded="true" />
+                <element signature="e#218#219#0" expanded="true" />
+                <element signature="e#278#279#0" expanded="true" />
+                <element signature="e#310#311#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -43,69 +61,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/controller/RedisController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+            <state relative-caret-position="558">
+              <caret line="32" column="31" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-annotations/1.5.20/swagger-annotations-1.5.20.jar!/io/swagger/annotations/Tag.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/config/SwaggerConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="20" column="80" selection-start-line="20" selection-start-column="80" selection-end-line="20" selection-end-column="80" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#paths#0;class#SwaggerConfig#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-annotations/1.5.20/swagger-annotations-1.5.20.jar!/io/swagger/annotations/ApiOperation.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="235" column="32" selection-start-line="235" selection-start-column="32" selection-end-line="235" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -150,7 +110,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/wishuok/service/IRoleService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/404.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/c3p0.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/showRole.jsp" />
@@ -172,13 +131,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/UserRedPacketService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wishuok/service/impl/RedisRedPacketService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/wishuok/config/SwaggerIgnore.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wishuok/controller/SwaggerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wishuok/controller/UserRedPacketController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wishuok/controller/RedisController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wishuok/config/SwaggerConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wishuok/utils/LogHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wishuok/controller/RedisController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
       </list>
     </option>
   </component>
@@ -290,6 +251,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="wishuok" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SSMStartupDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSMStartupDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wishuok" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SSMStartupDemo" type="b2602c69:ProjectViewProjectNode" />
@@ -481,18 +451,18 @@
       <workItem from="1563666748476" duration="3355000" />
       <workItem from="1563718572087" duration="12000" />
       <workItem from="1563752349603" duration="804000" />
-      <workItem from="1564149173416" duration="3576000" />
+      <workItem from="1564149173416" duration="5637000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71856000" />
+    <option name="totallyTimeSpent" value="73917000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1205" y="4" width="1369" height="1447" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23071046" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23071046" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -503,7 +473,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2939815" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.37529138" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.37529138" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -575,6 +545,8 @@
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="role.note" language="JAVA" />
         <watch expression="redisTemplate.opsForValue().get(&quot;key2&quot;);" language="JAVA" />
+        <watch expression="e.toString()" language="JAVA" />
+        <watch expression="e.getMessage()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -587,6 +559,16 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>e.getMessage()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>e.toString()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>redisTemplate.opsForValue().get(&quot;key2&quot;);</expression-string>
         <language-id>JAVA</language-id>
@@ -614,20 +596,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.9.RELEASE/spring-data-redis-2.1.9.RELEASE.jar!/org/springframework/data/redis/core/ValueOperations.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.9.RELEASE/spring-data-redis-2.1.9.RELEASE-sources.jar!/org/springframework/data/redis/core/ValueOperations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="301" column="68" selection-start-line="301" selection-start-column="68" selection-end-line="301" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.1.9.RELEASE/spring-data-redis-2.1.9.RELEASE-sources.jar!/org/springframework/data/redis/core/DefaultValueOperations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
@@ -968,13 +936,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="235" column="32" selection-start-line="235" selection-start-column="32" selection-end-line="235" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-annotations/1.5.20/swagger-annotations-1.5.20.jar!/io/swagger/annotations/ApiOperation.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1016,16 +977,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/controller/RedisController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/config/SwaggerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
@@ -1046,8 +997,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+        <state relative-caret-position="219">
+          <caret line="33" column="77" lean-forward="true" selection-start-line="33" selection-start-column="77" selection-end-line="33" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="230" column="12" selection-start-line="230" selection-start-column="12" selection-end-line="230" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/controller/RedisController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="32" column="31" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wishuok/utils/LogHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="e#197#198#0" expanded="true" />
+            <element signature="e#218#219#0" expanded="true" />
+            <element signature="e#278#279#0" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

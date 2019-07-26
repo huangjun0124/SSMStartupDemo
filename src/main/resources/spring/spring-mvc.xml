@@ -30,6 +30,8 @@
 
     <!--注解驱动，很多配置都需要它(比如上传下载，类型转换器...)，一般都会添加该配置-->
     <mvc:annotation-driven />
+    <!--向容器自动注入配置 -->
+    <context:annotation-config/>
     <!--注解驱动，启用Async，等同于代码使用 @EnableAsync -->
     <task:annotation-driven />
     <!--
@@ -37,10 +39,14 @@
        location:本地真实路径  mapping：映射搭配的虚拟路径
     -->
     <mvc:resources mapping="/resource/**" location="/resources" />
+    <!--配置 Swagger-ui 资源 -->
+    <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/" />
+    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/" />
     <!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/" />
         <property name="suffix" value=".jsp" />
     </bean>
-
+    <!--将 SwaggerConfig 配置类注入 -->
+    <bean class="com.wishuok.config.SwaggerConfig"/>
 </beans>

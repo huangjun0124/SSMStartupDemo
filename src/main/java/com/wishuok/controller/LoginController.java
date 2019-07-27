@@ -1,5 +1,6 @@
 package com.wishuok.controller;
 
+import com.wishuok.utils.CookieHelper;
 import com.wishuok.utils.JsonHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,39 +30,44 @@ public class LoginController {
     }
 
     //登录验证
-    @RequestMapping(value = "/doLogin",method = RequestMethod.POST)
-    @ResponseBody
-    public String loginVerify(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        Map<String, Object> map = new HashMap<String, Object>();
+    @RequestMapping(value = "/doLogin", method = RequestMethod.POST)
+    public ModelAndView loginVerify(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        ModelAndView modelAndView = new ModelAndView();
+
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String rememberme = request.getParameter("rememberme");
         // 模拟登录校验
-        if(!username.equals("wishuok")) {
-            map.put("code",-1);
-            map.put("msg","用户名无效！");
-        } else if(!password.equals("pass")) {
-            map.put("code",-1);
-            map.put("msg","密码错误！");
+        if (!"wishuok".equals(username)) {
+            modelAndView.setViewName("/login");
+            modelAndView.addObject("message", "用户不存在！");
+            InvalidateCookie(request, response);
+            return modelAndView;
+        } else if (!"pass".equals(password)) {
+            modelAndView.setViewName("/login");
+            modelAndView.addObject("message", "密码错误！");
+            InvalidateCookie(request, response);
+            return modelAndView;
         } else {
-            //登录成功
-            map.put("code",0);
-            map.put("msg","");
             //添加session
             request.getSession().setAttribute("LOGIN_USER", username);
             request.getSession().setMaxInactiveInterval(60 * 30);// 设置30分钟过期，需要重新登录
             //添加cookie
-            if(rememberme!=null) {
-                //创建两个Cookie对象
-                Cookie nameCookie = new Cookie("username", username);
-                //设置Cookie的有效期为3天
-                nameCookie.setMaxAge(60 * 60 * 24 * 3);
-                Cookie pwdCookie = new Cookie("password", password);
-                pwdCookie.setMaxAge(60 * 60 * 24); // 1 天
-                response.addCookie(nameCookie);
-                response.addCookie(pwdCookie);
+            if (rememberme != null) {
+                CookieHelper.addCookie(response, "username", username);
+                CookieHelper.addCookie(response, "password", password);
             }
+            else{
+                InvalidateCookie(request, response);
+            }
+
+            modelAndView.setViewName("redirect: /swagger-ui.html");
+            return modelAndView;
         }
-        return JsonHelper.toJson(map);
+    }
+
+    private void InvalidateCookie(HttpServletRequest request, HttpServletResponse response){
+        CookieHelper.removeCookie(request, response, "username");
+        CookieHelper.removeCookie(request, response, "password");
     }
 }

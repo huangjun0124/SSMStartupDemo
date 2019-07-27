@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: junguoguo
-  Date: 2019/7/27
-  Time: 7:07
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String username = "";
@@ -21,51 +15,57 @@
 %>
 <html>
 <head>
-    <title>SSM DEO 登录页面</title>
-    <script type="text/javascript"  src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            <%--登录验证--%>
-            $("#submit-btn").click(function () {
-                var user = $("#user_login").val();
-                var password = $("#user_pass").val();
-                if(user==="") {
-                    alert("用户名不可为空!");
-                } else if(password===""){
-                    alert("密码不可为空!");
-                } else {
-                    $.ajax({
-                        async: false,//同步，待请求完毕后再执行后面的代码
-                        type: "POST",
-                        url: '${pageContext.request.contextPath}/login/doLogin',
-                        contentType: "application/x-www-form-urlencoded; charset=utf-8",
-                        data: $("#loginForm").serialize(),
-                        dataType: "json",
-                        success: function (data) {
-                            var ret = JSON.parse(data) ;
-                            if(ret.code===-1) {
-                                alert(ret.msg);
-                            } else {
-                                window.location.href="${pageContext.request.contextPath}/swagger";
-                            }
-                        },
-                        error: function () {
-                            alert("数据获取失败")
-                        }
-                    })
-                }
-            })
-        })
-    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SSMDemo Login</title>
+    <!-- Bootstrap core CSS -->
+    <link href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="${pageContext.request.contextPath}/resources/style/css/floating-label.css" rel="stylesheet">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-min.js"></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-<form name="loginForm" id="loginForm"  method="post">
-    <input type="text" name="username" id="user_login"
-           class="input" value="<%=username%>" size="20" required/></label>
-    <input type="password" name="password" id="user_pass"
-           class="input" value="<%=password%>" size="20" required/>
-    <input name="rememberme" type="checkbox" id="rememberme" value="1" /> 记住密码
-    <input type="button" name="wp-submit" id="submit-btn" class="button button-primary button-large" value="登录" />
+<form id="form" class="form-signin" method="post" action="${pageContext.request.contextPath}/login/doLogin">
+    <div class="text-center">
+
+        <c:if test="${requestScope.message != null}">
+            <div class="alert alert-danger" role="alert">
+                登录错误:${requestScope.message}  请重新登录
+            </div>
+        </c:if>
+    </div>
+    <div class="text-center mb-4">
+        <img class="mb-4" src="${pageContext.request.contextPath}/resources/images/cat.svg" alt="" width="72"
+             height="72">
+        <h1 class="h3 mb-3 font-weight-normal">SSM Startup Demo</h1>
+        <p>Using <code>Bootstrap demo</code> to create a beautiful log in page like this </p>
+    </div>
+
+    <div class="form-label-group">
+        <input type="text" id="username" name="username" value="<%=username%>" class="form-control"
+               placeholder="User Name" required autofocus>
+        <label for="username">用户名</label>
+    </div>
+
+    <div class="form-label-group">
+        <input type="password" id="userpass" name="password" value="<%=password%>" class="form-control"
+               placeholder="Password" required>
+        <label for="userpass">Password</label>
+    </div>
+
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" id="rememberme" name="rememberme"/> 记住密码
+        </label>
+    </div>
+    <button id="submit-btn" class="btn btn-lg btn-primary btn-block" type="submit" >登录</button>
+    <p class="mt-5 mb-3 text-muted text-center">&copy;2019 - today</p>
 </form>
 </body>
 </html>

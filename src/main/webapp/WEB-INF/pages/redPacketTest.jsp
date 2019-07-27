@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>模拟抢红包</title>
-    <script type="text/javascript"  src="https://code.jquery.com/jquery-3.2.0.js"></script>
+    <script type="text/javascript"  src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             // 模拟 2500 个异步请求并发

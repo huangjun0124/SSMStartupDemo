@@ -38,7 +38,7 @@
        静态资源映射，应为WEB-INF是一个安全目录，不能使用get访问，而外部的js，css都是属性get访问，所有需要映射，不然无法读取
        location:本地真实路径  mapping：映射搭配的虚拟路径
     -->
-    <mvc:resources mapping="/resource/**" location="/resources" />
+    <mvc:resources mapping="/resources/**" location="/resources/" />
     <!--配置 Swagger-ui 资源 -->
     <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/" />
     <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/" />
@@ -49,4 +49,17 @@
     </bean>
     <!--将 SwaggerConfig 配置类注入 -->
     <bean class="com.wishuok.config.SwaggerConfig"/>
+
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 拦截所有mvc控制器 -->
+            <mvc:mapping path="/**"/>
+            <!-- mvc:exclude-mapping是另外一种拦截，它可以在你后来的测试中对某个页面进行不拦截，这样就不用在 LoginInterceptor的preHandler方法里面获取不拦截的请求uri地址了(优选) -->
+            <mvc:exclude-mapping path="/login" />
+            <mvc:exclude-mapping path="/login/**" />
+            <mvc:exclude-mapping path="/resources/**" />
+            <bean class="com.wishuok.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

@@ -61,7 +61,7 @@ public class LoginController {
                 InvalidateCookie(request, response);
             }
 
-            modelAndView.setViewName("redirect: /swagger-ui.html");
+            modelAndView.setViewName("redirect:/swagger-ui.html");
             return modelAndView;
         }
     }

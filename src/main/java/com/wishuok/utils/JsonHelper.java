@@ -18,7 +18,7 @@ public class JsonHelper {
         return null;
     }
 
-    public Object toObject(String json, Class claz){
+    public static <T> T toObject(String json, Class<T>  claz){
         ObjectMapper mapper = new ObjectMapper();
         try {
             return mapper.readValue(json, claz);

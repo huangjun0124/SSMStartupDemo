@@ -33,6 +33,12 @@ public class RoleService implements IRoleService {
         role = redisTemplateSameSession(role);
         return role;
     }
+
+    @Override
+    public int insertRole(Role role) {
+        return roleMapper.insert(role);
+    }
+
     private Role testJedisTemplate(Role role){
          redisTemplate.opsForValue().set(role.getId(), role);
          return (Role)redisTemplate.opsForValue().get(role.getId());

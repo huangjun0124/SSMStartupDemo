@@ -4,4 +4,6 @@ import com.wishuok.pojo.Role;
 
 public interface IRoleService {
     Role  findRoleById(String id);
+
+    int insertRole(Role role);
 }

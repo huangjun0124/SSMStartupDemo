@@ -29,7 +29,7 @@
   <version>1.0-SNAPSHOT</version>
   <!--版本信息共有提取版本号，便于后期项目版本提升，查找麻烦，这里的标签名称随意命名-->
   <properties>
-    <spring.version>5.0.4.RELEASE</spring.version>
+    <spring.version>5.2.3.RELEASE</spring.version>
     <aspectJ.version>1.8.13</aspectJ.version>
     <mybatis.version>3.4.6</mybatis.version>
     <mybatis.spring.version>1.3.2</mybatis.spring.version>
